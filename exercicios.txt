@@ -21,3 +21,35 @@ class MainClass {
   Console.ReadKey();  
   }
 }
+
+Exercício 2: Escreva um programa que leia o nome e o preço de 10 produtos. Logo após realizar ocadastro dos produtos, pedir para o usuário digitar um valor, 
+no qual deverá ser realizada uma pesquisa e exibir apenas os produtos que possuem preço até o valor digitado pelo usuário. 
+class MainClass {
+  public static void Main (string[] args){
+    string[] produtos=new string[5];
+    double[] precos=new double[5];
+    int x=0;
+    double z=0;
+
+    
+    for(x=0;x<5;x++){
+      Console.Write("Digite o nome do {0}º produto: ", (x+1));
+      produtos[x]=Console.ReadLine();
+      Console.Write("Digite o preço {0}º do produto: ", (x+1));
+      precos[x]=double.Parse(Console.ReadLine());
+      Console.Clear();
+    }
+
+
+    Console.Write("Informe o valor maximo: ");
+    z=double.Parse(Console.ReadLine());
+
+    for(x=0;x<5;x++){
+      if(z>=precos[x]){
+        Console.WriteLine("^^^^^^^^^^^^\nItem: "+(produtos[x])+"\nValor: R$" +(precos[x]));
+      }
+    }
+
+    Console.ReadKey();
+  }
+}
