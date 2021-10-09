@@ -100,3 +100,41 @@ class MainClass {
   }
 }
 
+Exercício 5: Escreva um programa que leia o nome de 10 alunos (vetor). Para cada aluno devem ser registradas 3 notas (matriz). Calcular a média das
+notas de cada aluno e armazenar emum vetor. Ao final deverá ser exibido na tela um relatório com os dados de todos os alunos (nome, notas, media) 
+e também a informação se o aluno foi aprovado ou reprovado (média para aprovação 7,0). Para o caso de aprovado exibir todos os dados do aluno nacor 
+azul, caso contrário exibir os dados na cor vermelha.(Dica: usar os comandos Console.ForegroundColor = ConsoleColor.Red e Console.ForegroundColor = ConsoleColor.Blue);
+AlunosNotasMediaMiguel 6,07,08,07,0Duduzinho 7,06,08,07,0Julia 9,57,55,57,5Sophia 8,59,57,58,5Lívia 3,07,05,05,0Lorena 7,55,56,56,5Vitor 6,08,010,08,0Mariana 7,08,09,08,0Maria Luiza 6,05,04,05,0Ana Luiza 6,05,07,06,0
+class MainClass {
+  public static void Main (string[] args) {
+    double[,] nota= new double[10,3];
+    string[] nome= new string[10];
+    double[] media= new double[10];
+    double valor =0;
+		  
+      for(int x=0; x<10; x++ ){
+        Console.Write("Informe o nome do aluno: ");
+        nome[x] = Console.ReadLine();
+        Console.Write($"escreva a 1ª nota de {nome[x]}: ");
+	nota[x,0] = double.Parse(Console.ReadLine());
+        Console.Write($"escreva a 2ª nota de {nome[x]}: ");
+	nota[x,1] = double.Parse(Console.ReadLine());
+        Console.Write($"escreva a 3ª nota de {nome[x]}: ");
+	nota[x,2] = double.Parse(Console.ReadLine());
+        valor = nota[x,0] + nota[x,1] + nota[x,2];
+        media[x] = valor/3;
+        Console.Clear();
+      }
+      
+      Console.WriteLine("Aluno  |  Notas  |  Média");
+      for(int x=0; x<10; x++){
+        Console.WriteLine("\n{0} | {1}-{2}-{3} | {4}", nome[x], nota[x,0], nota[x,1], nota[x,2], media[x]);
+        if(media[x] > 7 || media[x] == 7){
+	  Console.ForegroundColor = ConsoleColor.Blue;
+	}
+	else{
+	  Console.ForegroundColor = ConsoleColor.Red;
+	}
+     }
+  }
+}
