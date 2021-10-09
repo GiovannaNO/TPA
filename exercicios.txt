@@ -53,3 +53,24 @@ class MainClass {
     Console.ReadKey();
   }
 }
+
+Exercício 3: Escreva um programa que leia uma matriz (3x5 ou 5x3) de15 números inteiros e exiba ao final a soma dos valores de cada linha que estão 
+armazenados nesta matriz. 
+class MainClass {
+  public static void Main (string[] args){
+    double [,] num=new double[3,5];
+    double [] soma=new double[3];
+    int x;
+
+    for(x=0; x<3; x++){
+      for(int y=0; y>5; y++){
+        Console.Clear();
+        Console.WriteLine("Insira o "+(y+1)+"º valor da "+(x+1)+"ª linha: ");
+        num[x,y]=double.Parse(Console.ReadLine());
+        soma[x]+=num[x,y];
+      }
+    }
+
+    Console.WriteLine($"Soma das linhas:\nLinha 1={soma[0]}\nLinha 2={soma[1]}\nLinha 3={soma[2]}");
+  }
+}
