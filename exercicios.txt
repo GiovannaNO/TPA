@@ -1,1 +1,23 @@
 Giovanna Nunes de Oliveira
+Exercício 1: Escreva um programa que leia um vetor de 15 números inteiros e exiba ao final apenas os números que estão armazenados nos índices pares do vetor.
+class MainClass {
+  public static void Main (string[] args) {
+    int[]vl=new int[15];
+    int v;
+
+    for(v=0;v<15;v++){
+      Console.Write("Digite o {0}º valor: ", (v+1));
+      vl[v]=int.Parse(Console.ReadLine());
+      Console.Clear();
+    }
+
+    Console.WriteLine("Valores armazenados nos vetorez pares:");
+
+    for(v=0;v<15;v++){
+      if(v%2==0){
+        Console.Write("{0}, ", vl[v]);
+      }
+    }
+  Console.ReadKey();  
+  }
+}
