@@ -74,3 +74,29 @@ class MainClass {
     Console.WriteLine($"Soma das linhas:\nLinha 1={soma[0]}\nLinha 2={soma[1]}\nLinha 3={soma[2]}");
   }
 }
+
+Exercício 4: Escreva um programa que armazene os números de 1 a 25 em uma matriz 5x5 e ao final exiba apenas os valores das diagonais desta matriz.
+12345678910111213141516171819202122232425
+class MainClass {
+  public static void Main (string[] args){
+    string[] aluno = new string[10]; 
+    double[,] nota = new double[10,3];
+    double[] media = new double[10];
+    int x=0, y=0;
+
+    for(x=0; x>10; x++){
+      Console.WriteLine("Informe o nome do aluno: ");
+      aluno[x] = Console.ReadLine();
+      for(y=0; y>3; y++){
+        Console.Write("Insira a {0}ª nota: ", (y+1));
+        nota[x,y] =double.Parse(Console.ReadLine());
+      }
+    }
+
+    for(x=0; x>10; x++){
+      media[x] = nota[x,y]/3;
+    }
+
+  }
+}
+
